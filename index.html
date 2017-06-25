@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <header>
+  </header>
+  <body>
+    <div id="app">
+      <p v-if="categories.length == 0">{{ text }}</p>
+      <p v-else>
+        <ul>
+          <li v-for="category in categories">
+            {{ category.categories.name }}
+          </li>
+        </ul>
+      </p>
+      <input type="submit" value="Submit" @click="getCategories">
+    </div>
+    <script src="js/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
