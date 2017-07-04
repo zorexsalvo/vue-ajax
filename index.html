@@ -4,15 +4,12 @@
   </header>
   <body>
     <div id="app">
-      <p v-if="categories.length == 0">{{ text }}</p>
-      <p v-else>
-        <ul>
-          <li v-for="category in categories">
-            {{ category.categories.name }}
-          </li>
-        </ul>
-      </p>
-      <input type="submit" value="Submit" @click="getCategories">
+      <input v-model="keyword" placeholder="search city">
+    <input type="submit" value="Submit" @click="searchCity">
+    <div v-for="restaurant in restaurants">
+      <img :src="restaurant.restaurant.thumb"  width="100px">
+      <a :href="restaurant.restaurant.url">{{ restaurant.restaurant.name }}</a>
+    </div>
     </div>
     <script src="js/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
